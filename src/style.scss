@@ -1,12 +1,36 @@
 @import url(./normalize.css);
 @import url(./fonts.scss);
 :root {
+  --dark-1: #2e335a;
+  --dark-2: #454b79;
+  --dark-3: #0c1033;
+  --dark-4: #1d234d;
+  --label-light-primary: #000;
+  --label-light-secondary: rgba(60, 60, 67, 0.6);
+  --label-light-tertiary: rgba(60, 60, 67, 0.3);
+  --label-light-quaternary: rgba(60, 60, 67, 0.18);
+  --label-dark-primary: #fff;
+  --label-dark-secondary: rgba(235, 235, 245, 0.6);
+  --label-dark-tertiary: rgba(235, 235, 245, 0.3);
+  --label-dark-quaternary: rgba(235, 235, 245, 0.18);
+  --papaya-color-blue: #22d7ff;
+  --papaya-color-dark-1: #2e335a;
+  --papaya-color-dark-2: #1c1b33;
+  --papaya-color-dark-purple: #48319d;
+  --papaya-color-purple: #8322ff;
+  --papaya-color-deep-purple: #613690;
+  --papaya-color-red: #ed695e;
+  --papaya-color-yellow: #f4bf4f;
+  --papaya-color-green: #61c554;
+  --papaya-color-neon-purple: #8015a7;
+
   --font-family: "SF Pro Text", sans-serif;
   --second-family: "Inter", sans-serif;
   --font3: "SF Compact Display", sans-serif;
   --font4: "SFProDisplay", sans-serif;
   --font5: "Lato", sans-serif;
 }
+
 h1 {
   font-family: var(--font5);
   font-weight: 400;
