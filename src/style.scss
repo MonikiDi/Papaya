@@ -1,5 +1,5 @@
-@import url(./normalize.css);
-@import url(./fonts.scss);
+@import url(./css/normalize.css);
+@import url(./css/fonts.css);
 :root {
   --dark-1: #2e335a;
   --dark-2: #454b79;
@@ -29,10 +29,117 @@
   --font3: "SF Compact Display", sans-serif;
   --font4: "SFProDisplay", sans-serif;
   --font5: "Lato", sans-serif;
+
+  --transition: 1s ease-in-out;
+}
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1482px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+body {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--label-dark-primary);
+}
+// Header
+.header {
+  box-shadow: 40px 60px 150px 0 rgba(59, 38, 123, 0.7);
+  background: linear-gradient(136deg, #2e335a 0%, #1c1b33 100%);
+}
+.header__search {
+  max-width: 442px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 85, 232, 0.1) 0%,
+    rgba(157, 223, 243, 0.1) 100%
+  );
+}
+.search__btn {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  background-image: url("./img/icon/search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: none;
+  outline-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  transition: outline var(--transition), transform var(--transition),
+    border var(--transition), border-radius var(--transition);
+}
+
+.search__input {
+  padding: 4px;
+  width: 100%;
+  color: var(--label-dark-primary);
+  border: none;
+  background: transparent;
+  outline: none;
+  outline-color: transparent;
+  transition: outline var(--transition);
+}
+.search__input::placeholder {
   font-family: var(--font5);
   font-weight: 400;
-  color: red;
+  font-size: 13px;
+  color: var(--label-dark-primary);
+}
+.search__micro {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  background-image: url("./img/icon/micro.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: none;
+  outline-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  transition: outline var(--transition), transform var(--transition),
+    border var(--transition), border-radius var(--transition);
+}
+
+.search__btn:focus-visible,
+.search__input:focus-visible,
+.search__micro:focus-visible {
+  outline: 1px solid var(--label-dark-primary);
+  border-radius: 100%;
+}
+.search__input:focus-visible {
+  border-radius: 10px;
+}
+.search__btn:hover,
+.search__micro:hover {
+  border-radius: 100%;
+  border: 1px solid var(--label-dark-primary);
+}
+.search__btn:active,
+.search__micro:active {
+  transform: scale(0.9);
 }
