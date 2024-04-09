@@ -78,7 +78,18 @@ body {
     max-width: 442px;
   }
 }
+.header__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
 // Search
+.header__search {
+  width: 446px;
+}
 .search {
   display: flex;
   align-items: center;
@@ -159,16 +170,13 @@ body {
 }
 // Upmenu
 .header__upmenu {
-}
-.upmenu {
+  position: absolute;
+  right: 0;
 }
 .upmenu__list {
   display: flex;
   align-items: center;
   gap: 30px;
-}
-
-.upmenu__item {
 }
 .upmenu__link {
   display: flex;
@@ -185,33 +193,33 @@ body {
   border-radius: 100%;
   transition: outline var(--transition), transform var(--transition),
     border var(--transition), border-radius var(--transition);
-}
-.upmenu__link--mail {
-  background-image: url("/src/img/icon/top-menu-mail.svg");
-}
-.upmenu__link--bell {
-  background-image: url("/src/img/icon/top-menu-bell.svg");
-}
-.upmenu__link--profile {
-  width: 32px;
-  height: 32px;
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: var(--label-dark-primary);
-  background: var(--papaya-color-blue);
-  border-radius: 100%;
-}
-.upmenu__link:focus-visible {
-  outline: 1px solid var(--label-dark-primary);
-  outline-offset: 2px;
-  border-radius: 100%;
-}
-.upmenu__link:hover {
-  border-radius: 100%;
-  border: 1px solid var(--label-dark-primary);
-}
-.upmenu__link:active {
-  transform: scale(0.9);
+  &--mail {
+    background-image: url("/src/img/icon/top-menu-mail.svg");
+  }
+  &--bell {
+    background-image: url("/src/img/icon/top-menu-bell.svg");
+  }
+  &--profile {
+    width: 32px;
+    height: 32px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--label-dark-primary);
+    background: var(--papaya-color-blue);
+    border-radius: 100%;
+  }
+  &:focus-visible {
+    outline: 1px solid var(--label-dark-primary);
+    outline-offset: 2px;
+    border-radius: 100%;
+  }
+  &:hover {
+    border-radius: 100%;
+    border: 1px solid var(--label-dark-primary);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
 }
