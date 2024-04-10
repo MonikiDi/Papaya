@@ -113,14 +113,8 @@ body {
   width: 32px;
   height: 32px;
   flex: 0 0 auto;
-  outline: none;
   outline-color: transparent;
   transition: outline var(--transition), transform var(--transition);
-}
-.progress-circle.progress-circle--search-btn {
-  top: 0;
-  left: 0;
-  transition: --p var(--transition), transform var(--transition);
 }
 .search__input {
   padding: 4px;
@@ -130,7 +124,6 @@ body {
   background: transparent;
   outline: none;
   outline-color: transparent;
-  transition: outline var(--transition);
   &::placeholder {
     font-family: var(--font5);
     font-weight: 400;
@@ -143,15 +136,10 @@ body {
   width: 32px;
   height: 32px;
   flex: 0 0 auto;
-  outline: none;
   outline-color: transparent;
   transition: outline var(--transition), transform var(--transition);
 }
-.progress-circle.progress-circle--micro {
-  top: 0;
-  left: 0;
-  transition: --p var(--transition), transform var(--transition);
-}
+
 .search__btn:focus-visible,
 .search__micro:focus-visible {
   outline: 1px solid var(--label-dark-primary);
@@ -167,8 +155,7 @@ body {
   }
 }
 .search__btn:active,
-.search__micro:active,
-.progress-circle--micro:active {
+.search__micro:active {
   transform: scale(0.9);
 }
 
@@ -183,49 +170,36 @@ body {
   gap: 30px;
 }
 .upmenu__link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-  outline: none;
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: 32px;
   outline-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 100%;
-  transition: outline var(--transition), transform var(--transition),
-    border var(--transition), border-radius var(--transition);
-  &--mail {
-    background-image: url("/src/img/icon/top-menu-mail.svg");
-  }
-  &--bell {
-    background-image: url("/src/img/icon/top-menu-bell.svg");
-  }
-  &--profile {
-    width: 32px;
-    height: 32px;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: var(--label-dark-primary);
-    background: var(--papaya-color-blue);
-    border-radius: 100%;
-  }
+  transition: outline var(--transition), transform var(--transition);
+
   &:focus-visible {
     outline: 1px solid var(--label-dark-primary);
-    outline-offset: 2px;
     border-radius: 100%;
   }
   &:hover {
-    border-radius: 100%;
-    border: 1px solid var(--label-dark-primary);
+    .progress-circle {
+      --p: 100%;
+    }
+    .progress-circle::before {
+      opacity: 1;
+    }
   }
   &:active {
     transform: scale(0.9);
   }
+}
+.progress-circle.progress-circle--micro,
+.progress-circle.progress-circle--search-btn,
+.progress-circle.progress-circle--mail,
+.progress-circle.progress-circle--bell,
+.progress-circle.progress-circle--profile {
+  top: 0;
+  left: 0;
 }
 ////////////////////////////////////////////
 // Main-menu
@@ -312,7 +286,6 @@ body {
   line-height: 130%;
   color: var(--label-dark-secondary);
   text-transform: capitalize;
-  outline: none;
   outline-color: transparent;
   transition: outline var(--transition), color var(--transition),
     transform var(--transition);
@@ -362,7 +335,6 @@ body {
 // progress
 .progress-circle {
   position: absolute;
-  display: inline-block;
   top: 10px;
   left: 2px;
   width: 32px;
@@ -374,7 +346,7 @@ body {
     rgba(34, 215, 255, 1) var(--p),
     transparent 0
   );
-  transition: --p var(--transition);
+  transition: --p var(--transition), transform var(--transition);
 }
 .progress-circle::before,
 .progress-circle::after {
@@ -451,5 +423,35 @@ body {
 }
 .progress-circle--micro::after {
   background: #37436a;
+}
+.progress-circle--mail::before {
+  background-image: url("/src/img/icon/top-menu-mail.svg");
+}
+.progress-circle--mail::after {
+  background: #2e335a;
+}
+.progress-circle--bell::before {
+  background-image: url("/src/img/icon/top-menu-bell.svg");
+}
+.progress-circle--bell::after {
+  background: #2e335a;
+}
+.progress-circle--profile::before {
+  content: "a";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--label-dark-primary);
+}
+.progress-circle--profile::after {
+  background: var(--papaya-color-blue);
+  border-radius: 100%;
 }
 //
